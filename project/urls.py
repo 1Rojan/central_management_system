@@ -19,5 +19,6 @@ from server import views as server_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', server_views.list_server, name='server_list')
+    path('', server_views.list_server, name='server_list'),
+    path('search/', server_views.search_server, name='search_server')
 ]
