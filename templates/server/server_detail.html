@@ -1,0 +1,49 @@
+{% extends './base.html' %}
+
+{% block content %}
+<h2>View Server</h2>
+<div class="card" >
+  <div class="card-body">
+    <a href="{% url 'update_server' server.id %}"><button class="btn btn-sm btn-outline-primary">Edit</button></a>
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Name</th>
+          <th scope="col">CPU</th>
+          <th scope="col">RAM</th>
+          <th scope="col">Ip Address</th>
+          <th scope="col">Public Ip</th>
+          <th scope="col">Private_ip</th>
+          <th scope="col">Status</th>
+          <th scope="col">Location</th>
+          <th scope="col">Server Type</th>
+          <th scope="col">Disk Type</th>
+          <th scope="col">Owner</th>
+          <th scope="col">Username</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr>
+              <th scope="row">{{server.id}}</th>
+              <td>{{server.name}}</td>
+              <td>{{server.cpu}}</td>
+              <td>{{server.ram}}</td>
+              <td>{{server.ip_address}}</td>
+              <td>{{server.public_ip}}</td>
+              <td>{{server.Private_ip}}</td>
+              <td>{{server.status}}</td>
+              <td>{{server.server_location}}</td>
+              <td>{{server.server_type}}</td>
+              <td>{{server.disk_type}}</td>
+              <td>{{server.owner}}</td>
+              <td>{{server.username}}</td>
+
+            </a>
+          </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+{% endblock %}
