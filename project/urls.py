@@ -19,10 +19,13 @@ from server import views as server_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', server_views.list_server, name='server_list'),
+    path('servers/', server_views.list_server, name='server_list'),
     path('search/', server_views.search_server, name='search_server'),
     path('add_server/', server_views.add_server, name='add_server'),
     path('server/<int:server_id>/', server_views.server_detail_view, name='server_detail'),
     path('server/<int:server_id>/edit', server_views.update_server, name='update_server'),
     path('server/<int:server_id>/delete', server_views.delete_server, name='delete_server'),
+    path("register", server_views.signup, name="register"),
+    path("", server_views.login_request, name="login"),
+    path("logout/", server_views.logout_request, name= "logout"),
 ]

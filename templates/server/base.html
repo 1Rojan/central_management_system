@@ -14,7 +14,7 @@
       <div class="container">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
           <div class="container-fluid">
-            <a class="navbar-brand" href="#">CMS</a>
+            <a class="navbar-brand" href="{% url 'server_list' %}">CMS</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
@@ -23,8 +23,15 @@
                 
               </ul>
               <span class="">
-                <button class="btn btn-primary">Sign Up</button>
-                <button class="btn btn-primary">Login</button>
+                
+                {% if user.is_authenticated %}
+                <span>Welcome {{user}} !</span>
+                <a href="{% url 'logout' %}"> <button class="btn btn-primary">Log out</button></a>
+                {% else %}
+                <a href="{% url 'register' %}"> <button class="btn btn-primary">Sign Up</button></a>
+                <a href="{% url 'login' %}">  <button class="btn btn-primary">Login</button></a>
+
+                {% endif %}
               </span>
             </div>
           </div>
